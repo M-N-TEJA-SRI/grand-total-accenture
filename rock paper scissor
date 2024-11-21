@@ -1,0 +1,35 @@
+#include <iostream>
+#include<vector>
+#include<map>
+using namespace std;
+int main() {
+    // Write C++ code here
+    int n;
+    cin>>n;
+ string kyle,charlie;
+ int k=0,c=0,i;
+ cin>>kyle>>charlie;
+ for(i=0;i<n;i++){
+     if((kyle[i]=='R'&&charlie[i]=='S')||(kyle[i]=='S'&&charlie[i]=='P')||(kyle[i]=='R'&&charlie[i]=='S')||(kyle[i]=='P'&&charlie[i]=='R'))
+     k++;
+     else if(kyle[i]==charlie[i])
+     {
+         k+=0;
+         c+=0;
+     }
+     else
+     c++;
+ }
+ if(c>k)
+ cout<<"Charlie";
+ else if(k>c)
+ cout<<"Kyle";
+ else
+ cout<<"Both";
+    return 0;
+}
+output
+2
+RP
+PS
+Charlie
