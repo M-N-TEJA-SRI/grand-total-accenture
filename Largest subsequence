@@ -1,0 +1,29 @@
+a[i+1]=a[i]*3 return number of elements that satisfy this condition
+#include <iostream>
+#include<vector>
+using namespace std;
+int main() {
+    // Write C++ code here
+    int n;
+    cin>>n;
+    int a[n],i,temp;
+    vector<int>v;
+    for(i=0;i<n;i++){
+        cin>>a[i];
+    }
+    temp=a[0];
+    v.push_back(temp);
+    for(i=1;i<n;i++){
+        if(temp*3==a[i]){
+            temp=a[i];
+            v.push_back(temp);
+        }
+    }
+    cout<<v.size();
+    
+    return 0;
+}
+output
+4
+2 4 6 18
+3
