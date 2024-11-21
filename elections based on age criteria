@@ -1,0 +1,50 @@
+nullify votes whose age is less than 18 . if there exists more than one winner or zero winners print -1 else print the winner number
+#include <iostream>
+#include<vector>
+#include<map>
+using namespace std;
+int main() {
+    // Write C++ code here
+ int n;
+ cin>>n;
+ int vote[n],age[n],i,maxi=0;
+ vector<int>ans;
+ map<int,int>mp;
+ vector<int>v;
+ for(i=0;i<n;i++){
+     cin>>vote[i];
+    
+ }
+ for(i=0;i<n;i++){
+     cin>>age[i];
+    
+ }
+ for(i=0;i<n;i++){
+     if(age[i]>=18)
+     v.push_back(vote[i]);
+ }
+ for(i=0;i<v.size();i++){
+     mp[v[i]]++;
+ }
+ for(auto it:mp){
+     if(it.second>maxi)
+     maxi=it.second;
+ }
+ for(auto it:mp){
+     if(it.second==maxi)
+     ans.push_back(it.first);
+ }
+ if(ans.size()==0||ans.size()>1)
+ cout<<-1;
+ else
+ cout<<ans[0];
+
+
+
+    return 0;
+}
+output
+10
+1 1 2 3 4 1 2 2 3 1
+24 13 35 15 50 16 20 18 25 64
+2
